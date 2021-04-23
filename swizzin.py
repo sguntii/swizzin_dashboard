@@ -178,7 +178,7 @@ def index(user):
         vendor = "sbio"
     else:
         vendor = "swizzin"
-    return flask.render_template('index.html', title='{user} - swizzin dashboard'.format(user=user), user=user, pages=pages, quota=quota, vendor=vendor, mounts=mounts, async_mode=socketio.async_mode)
+    return flask.render_template('index.html', title='{user} - Cloudboxie'.format(user=user), user=user, pages=pages, quota=quota, vendor=vendor, mounts=mounts, async_mode=socketio.async_mode)
 
 @socketio.on('connect', namespace='/websocket')
 def socket_connect():
