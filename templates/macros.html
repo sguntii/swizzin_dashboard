@@ -49,10 +49,17 @@
               <a class="nav-link" href="{{ url_for('stats') }}">Stats</a>
           </li>
           {% endif %}
-          <li class="nav-item">
-              <a class="nav-link" href="#" role="button">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ user }}
               </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+                <a class="dropdown-item" href="https://cloudboxie.com/">Cloudboxie</a>
+                <a class="dropdown-item" href="https://cloudboxie.com/">Cloudboxie</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://cloudboxie.com/">Cloudboxie</a>
+              </div>
           </li>
         </ul>
       </div>
@@ -95,10 +102,26 @@
               <a class="nav-link" href="{{ url_for('stats') }}">Stats</a>
           </li>
           {% endif %}
-          <li class="nav-item">
-              <a class="nav-link" href="#" role="button">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ user }}
               </a>
+              {% if vendor == "sbio" %}
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+                <a class="dropdown-item" href="https://panel.seedbox.io/submitticket.php?step=2&deptid=2">Support</a>
+                <a class="dropdown-item" href="https://discord.gg/wv67teS">Discord</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://panel.seedbox.io/index.php?rp=/knowledgebase/13/App-slots">Documentation</a>
+              </div>
+              {% else %}
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+                <a class="dropdown-item" href="https://cloudboxie.com/">Cloudboxie</a>
+                <a class="dropdown-item" href="https://cloudboxie.com/">Cloudboxie</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://cloudboxie.com/">Cloudboxie</a>
+              </div>
               {% endif %}
           </li>
         </ul>
